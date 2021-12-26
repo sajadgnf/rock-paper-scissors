@@ -1,0 +1,396 @@
+* {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    font-family: "Ubuntu", sans-serif;
+    background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+/* header */
+header {
+    width: 700px;
+    height: 150px;
+    border-radius: 10px !important;
+}
+
+.score_container {
+    border-radius: 5px;
+    width: 170px;
+}
+
+.score_title {
+    color: hsl(229, 64%, 46%);
+}
+
+.userScore,
+.houseScore {
+    font-size: 3rem;
+}
+
+.line_through {
+    width: 3px;
+    height: 80px;
+    background-color: hsl(229, 64%, 46%);
+    margin-left: 12px !important;
+}
+
+/* show case */
+/* choose_section */
+.choose_section {
+    margin: 100px auto !important;
+    position: relative;
+}
+
+.option {
+    background: #fff;
+    border: 13px solid silver;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+}
+
+.chosen_option {
+    background: #fff;
+    border: 25px solid silver;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chosen_option img {
+    width: 90px;
+}
+
+.paper {
+    top: -60px;
+    left: 165px;
+    border-color: rgb(27, 68, 180);
+}
+
+.scissors {
+    top: -60px;
+    left: 383px;
+    border-color: orange;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 2px 0 inset, rgba(255, 165, 0, 0.8) 0px 6px 0;
+}
+
+.rock {
+    top: 130px;
+    left: 274.5px;
+    border-color: rgb(184, 20, 20);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 2px 0 inset, rgba(184, 20, 20, 0.8) 0px 6px 0;
+}
+
+/* chosen section */
+.chosen_title {
+    margin: 50px 0 !important;
+}
+
+.result {
+    margin: 100px 70px 0 !important;
+    display: none;
+}
+
+.result_title {
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+.restart_btn {
+    outline: none;
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-top: 15px !important;
+}
+
+/* this is for the loading house choose */
+.blank {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(27, 27, 27, 0.2);
+    margin: 70px auto 0 !important;
+}
+
+/* modal */
+.rules {
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid #fff;
+    width: fit-content;
+    padding: 6px 25px !important;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+.modal_container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.modal_content {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    color: hsl(240, 1%, 27%);
+    transition: all 0.3s linear;
+    animation: 0.5s drop;
+}
+
+@keyframes drop {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+/* responsive */
+@media (max-width: 885px) {
+    .result {
+        position: absolute;
+        top: 180px;
+        left: 162px;
+    }
+
+    .chosen_option {
+        width: 150px;
+        height: 150px;
+        border-width: 16px;
+    }
+
+    .chosen_option img {
+        width: 50px;
+    }
+}
+
+@media (max-width: 756px) {
+    header {
+        width: 500px;
+        height: 100px;
+        border-radius: 20px;
+    }
+
+    header img {
+        width: 100px;
+    }
+
+    .score_container {
+        height: 80px;
+    }
+
+    .line_through {
+        height: 50px;
+    }
+
+    .score_title,
+    .score_name {
+        font-size: 0.8rem;
+    }
+
+    .userScore,
+    .houseScore {
+        font-size: 1.5rem;
+    }
+
+    .triangle {
+        width: 200px;
+    }
+
+    .option {
+        width: 120px;
+        height: 120px;
+    }
+
+    .option img {
+        width: 35px;
+    }
+
+    .paper {
+        top: -55px;
+        left: 106px;
+    }
+
+    .scissors {
+        top: -55px;
+        left: 275px;
+    }
+
+    .rock {
+        top: 92px;
+        left: 190.5px;
+    }
+
+    .result {
+        top: 180px;
+        left: 63px;
+    }
+
+    .result_title {
+        font-size: 2rem;
+    }
+
+    .rules {
+        left: 50%;
+        transform: translate(-67%);
+    }
+
+    .modal_content {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        padding-top: 50px !important;
+        border-radius: 0;
+    }
+
+    .modal_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        left: 49%;
+        transform: translateX(-50%);
+        height: 85%;
+    }
+
+    .modal_body {
+        margin-top: 100px !important;
+    }
+}
+
+@media (max-width: 520px) {
+    header {
+        width: 350px;
+        height: 100px;
+        border-radius: 20px;
+    }
+
+    header img {
+        width: 80px;
+    }
+
+    .score_container {
+        width: 120px;
+        font-size: 12px;
+        padding: 5px !important;
+    }
+
+    .score {
+        font-size: 2rem;
+    }
+
+    .paper {
+        top: -55px;
+        left: 33px;
+    }
+
+    .scissors {
+        top: -55px;
+        left: 195px;
+    }
+
+    .rock {
+        top: 83px;
+        left: 114.5px;
+    }
+
+    .chosen_container {
+        margin-top: 50px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .chosen_title {
+        font-size: 1rem !important;
+    }
+
+    .chosen_option {
+        width: 120px;
+        height: 120px;
+        border-width: 13px;
+    }
+
+    .chosen_option img {
+        width: 45px;
+    }
+
+    .result {
+        left: 0px;
+        top: 170px;
+    }
+
+    .rules {
+        transform: translate(-56%);
+    }
+}
+
+@media (max-width: 360px) {
+    header {
+        width: 300px;
+    }
+
+    .triangle {
+        width: 180px;
+    }
+
+    .option {
+        width: 100px;
+        height: 100px;
+        border-width: 10px;
+    }
+
+    .paper {
+        top: -47px;
+        left: 30px;
+    }
+
+    .scissors {
+        top: -47px;
+        left: 167px;
+    }
+
+    .rock {
+        top: 78px;
+        left: 99.5px;
+    }
+
+    .result {
+        left: -26px;
+    }
+}
